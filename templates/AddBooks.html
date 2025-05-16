@@ -17,9 +17,9 @@
             </div>
             <nav class="navbar">
                 <a href="{% url 'pages:index' %}">Home</a>
-                <a href="{% url ''%}">Books</a>
-                <a href="{% url ''pages:about%}">About</a>
-                <a href="AdminPage.html">admin page</a>
+                <a href="{% url 'books:freebooks' %}">Books</a>
+                <a href="{% url 'pages:about' %}">About</a>
+                <a href="{% url 'users:adminprofile' %}">admin page</a>
             </nav>
         </div>
     </header>
@@ -139,18 +139,8 @@
 </div>
 
 <footer class="site-footer">
-    <div class="footer-content">
-        <div class="footer-logo">
-            <img src="{% static 'photos/freebook.webp' %}" alt="FreeBook Logo">
-            <p>Your Gateway to Knowledge</p>
-        </div>
-        <div class="footer-info">
-            <p>&copy; 2023 FreeBook Library System</p>
-            <p>CS214 - Database Project</p>
-            <p>Cairo University</p>
-        </div>
-    </div>
-</footer>
+    {% include 'footer.html' %}
+
 
 <script src="{% static 'java/AddBooks.js' %}"></script>
 </body>
