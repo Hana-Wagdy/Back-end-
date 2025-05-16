@@ -7,4 +7,4 @@ urlpatterns =[
     path('adminprofile',views.adminprofile,name='adminprofile'),
 
     
-] #bye cutie -- bye bye 
+] #bye cutie -- bye bye hi hi 
