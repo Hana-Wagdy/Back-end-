@@ -1,0 +1,120 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Details - Online Library</title>
+
+  <link rel="stylesheet" href="{% static 'Css/bookdetailed.css' %}">
+</head>
+<body>
+  <header class="header" style="background-image: url('{% static 'photos/fav boo.jpeg' %}');">
+    <div class="main-header">
+      <div class="logo">
+        <img src="{% static 'photos/freebook.webp' %}" alt="Library Logo" class="logo-img" />
+      </div>
+      <nav class="navbar">
+        <a href="{% url 'pages:index' %}">Home</a>
+        <a href="{% url 'books:freebooks' %}">Books</a>
+        <a href="{% url 'pages:about' %}">About</a>
+      </nav> 
+    </div>
+  </header>
+
+  <main class="book-details-container">
+    <div class="book-cover">
+      <img src="{% static 'photos/book10cover.jpeg'%}" alt="Book Cover" />
+      <div class="book-status available">Available</div>
+    </div>
+
+    <div class="book-info">
+      <h1 class="book-title">Book Title Placeholder</h1>
+
+      <div class="book-meta">
+        <span class="author">By: <span class="author-name">Author Placeholder</span></span>
+        <span class="category">Category: <span class="category-name">Category Placeholder</span></span>
+        <span class="isbn">ISBN: <span class="isbn-number">ISBN Placeholder</span></span>
+        <span class="publication-year">Published: <span class="pub-year">Year Placeholder</span></span>
+        <span class="publisher">Publisher: <span class="publisher-name">Publisher Placeholder</span></span>
+        <span class="language">Language: <span class="language-name">Language Placeholder</span></span>
+      </div>
+
+      <div class="book-description">
+        <h3>Description</h3>
+        <p class="description-text">Description Placeholder</p>
+      </div>
+ 
+      <div class="edition-details">
+        <h3>Edition Notes</h3>
+
+        <div class="detail-row">
+            <span class="detail-label">Published in:<span class="detail-value">N/A</span></span>
+            
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Series:<span class="detail-value">N/A</span></span>
+
+        </div>
+
+        <h3>Classifications</h3>
+        <div class="detail-row">
+          <span class="detail-label">Dewey Decimal Class:<span class="detail-value">N/A</span></span>
+
+        </div>
+
+        <h3>The Physical Object</h3>
+        <div class="detail-row">
+          <span class="detail-label">Number of pages:<span class="detail-value">N/A</span></span>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="identifiers-section">
+      <h3>Edition Identifiers</h3>
+        <div class="detail-grid">
+            <span class="detail-label">Open Library:<span class="detail-value">N/A</span></span>
+            
+            <span class="detail-label">Internet Archive:<span class="detail-value">N/A</span></span>
+            
+            <span class="detail-label">ISBN 10:<span class="detail-value">N/A</span></span>
+            
+            <span class="detail-label">Library Thing:<span class="detail-value">N/A</span></span>
+            
+            <span class="detail-label">Goodreads:<span class="detail-value">N/A</span></span>
+            
+        </div>      </div>
+
+      
+
+    </div>
+    <script src ="{% static 'java/userprofile.js' %}"></script>
+    <script src="{% static 'java/bookdetailed.js' %}"defer></script>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="{% static 'photos/freebook.webp'%}" alt="FreeBook Logo" />
+        <p>Your Gateway to Knowledge</p>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2023 FreeBook Library System</p>
+        <p>CS214 - Database Project</p>
+        <p>Cairo University</p>
+      </div>
+      <div class="footer-contact">
+        <p><i class="bx bx-envelope"></i> contact@freebook.edu</p>
+        <p><i class="bx bx-phone"></i> +123 456 7890</p>
+      </div>
+    </div>
+
+  </footer>
+  
+</body>
+</html>

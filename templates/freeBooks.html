@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Book - FreeBook Library</title>
+  <link rel="stylesheet" href="{% static 'Css/freeBooks.css' %}"/>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+</head>
+<body>
+
+<header class="header" style="background-image: url('{% static 'photos/fav boo.jpeg' %}');">
+  <div class="main-header">
+    <div class="logo">
+      <img src="{% static 'photos/freebook.webp' %}" alt="Logo" class="logoimg">
+    </div>
+    <div class="navbar">
+      <a href="{% url 'pages:index'%}">Home</a>
+      <a href="{% url 'pages:about' %}">About</a>
+    </div>
+
+    <!-- Search -->
+    <div class="search-container">
+      <form action="#" method="get" class="search-form">
+        <div class="search-input-group">
+          <input type="text" name="search" placeholder="Search by title, author, or category..." class="search-input">
+          <button type="submit" class="search-btn">
+            <i class='bx bx-search'></i>
+          </button>
+        </div>
+        <div class="search-filters">
+            <label><input type="radio" name="search-type" value="title" checked> Title</label>
+            <label><input type="radio" name="search-type" value="author"> Author</label>
+            <label><input type="radio" name="search-type" value="category"> Category</label>
+            <label><input type="radio" name="search-type" value="available"> Available</label>
+          </div>
+      </form>
+    </div>
+    <!-- Search End -->
+  </div>
+  <!-- Book display section -->
+  <div class="books" id="books">
+    <div class="main-topics">
+      <h1>Free Books</h1>
+      <p>Explore our vast collection of free books. Discover new authors, dive into different genres, and enjoy unlimited reading without any cost.</p>
+    </div>
+
+      <div id="bookList" class="book-list"></div>
+      <script src="{% static 'java/freebooks.js' %}"></script>
+    </div>
+  </div>
+</header>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <img src="{% static 'photos/freebook.webp' %}" alt="FreeBook Logo">
+      <p>Your Gateway to Knowledge</p>
+    </div>
+    <div class="footer-info">
+      <p>&copy; 2023 FreeBook Library System</p>
+      <p>CS214 - Database Project</p>
+      <p>Cairo University</p>
+    </div>
+    <div class="footer-contact">
+      <p><i class='bx bx-envelope'></i> contact@freebook.edu</p>
+      <p><i class='bx bx-phone'></i> +123 456 7890</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

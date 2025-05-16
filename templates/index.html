@@ -1,0 +1,123 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page - FreeBook Library</title>
+    <!-- css sheet link-->
+    <link rel="stylesheet" href="{% static 'Css/decoration.css'%}">
+
+
+    <!-- link-->
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    
+    <header class="header" style="background-image: url('{% static 'photos/fav boo.jpeg' %}');">        
+        <div class="main-header">
+            <div class="logo">
+                <img src="{% static 'photos/freebook.webp' %}" alt="" class="logoimg">
+            </div>
+            <div class="navbar">
+                <a href="{% url 'pages:index' %}">Home</a>
+                <a href="{% url 'books:freebooks' %}">Books</a>
+                <a href="#" id="profile-link">Profile</a>         
+                <!-- aftkroooooooo el profile linkkkkkkkkkkkkkkk -->
+                <a href="{% url 'pages:about' %}">About</a>
+                <a href="{% url 'auth:login' %}" id="login-btn" class="btn">Login</a>
+                <a href="{% url 'auth:signup' %}" class="btn">Sign Up</a>
+            </div>
+        </div>
+        <div class="home" id="home">
+            <div class="home-content">
+                <h2>Welcome to Our<br>Online Library<br>System</h2>
+                <h4>Discover and Borrow<br>Books Online</h4>
+                <p>Browse our collection of books, search by title or author, 
+                and borrow your favorites. Register now to get started with 
+                our free library service.</p>
+                <a href="freeBooks.html" class="btn">Browse Books</a>
+                <a href="signup.html" class="btn">Join Now</a>
+            </div>
+            <div class="image">
+                <img src="{% static 'photos/bg_1.webp'%}" alt="">
+            </div>
+        </div>
+    </header>
+    <section class="critics" style="background-image: url('{% static 'photos/ctitics-background.jpg' %}');">
+        <div class="container">
+            <h3><i class='bx bx-right-arrow-alt'></i> Some quotes  </h3>
+            <div class="quotes">
+                <blockquote class="quote">
+                    <p>"This book provides an incredible insight into the complexities of leadership. A must-read for anyone in a position of power."</p>
+                    <footer>- John Doe, Leadership Expert</footer>
+                </blockquote>
+                <blockquote class="quote">
+                    <p>"A masterpiece that redefines what we know about creativity and innovation. It will inspire you to think outside the box."</p>
+                    <footer>- Jane Smith, Creative Director</footer>
+                </blockquote>
+                <blockquote class="quote">
+                    <p>"A beautifully written work that seamlessly blends storytelling with lessons on personal growth. Truly transformative."</p>
+                    <footer>- Mark Johnson, Book Critic</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+    
+    <!-- crucial section start -->
+<section class="crucial" style="background-image: url('{% static 'photos/crutial-background.png' %}');">
+    <div class="container">
+        <h3>Crucial Book's Takeaways</h3>
+        <p>Great books offer timeless insights. From strategy and leadership to creativity
+             and resilience—books summarize years of experience into powerful lesso
+            ns. Make reading a habit, and apply what you learn.</p>
+        
+        <div class="topics">
+            <div class="col-2">
+                <i class='bx bx-check'></i>
+                <div class="paragraph">
+                    <h4>Get a plan</h4>
+                    <p>
+                        Success doesn’t happen by accident—every great achievement starts with a solid plan. 
+                        Define your goals clearly, break them into actionable steps, and track progress consistently.
+                         Planning helps turn vision into reality.</p>
+                </div>
+            </div>
+            <div class="col-2">
+                <i class='bx bx-check'></i>
+                <div class="paragraph">
+                    <h4>Build up and out</h4>
+                    <p>
+                        Growth starts from within. Invest in developing your core strengths, then scale outward.
+                         Whether it's your team, business, or personal skills—strengthen the foundation before expanding your reach.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="{% static 'photos/freebook.webp' %}" alt="FreeBook Logo">
+                <p>Your Gateway to Knowledge</p>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2023 FreeBook Library System</p>
+                <p>CS214 - Database Project</p>
+                <p>Cairo University</p>
+            </div>
+            <div class="footer-contact">
+                <p><i class='bx bx-envelope'></i> contact@freebook.edu</p>
+                <p><i class='bx bx-phone'></i> +123 456 7890</p>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'java/index.js'%}"></script>
+      
+      
+</body>
+</html>

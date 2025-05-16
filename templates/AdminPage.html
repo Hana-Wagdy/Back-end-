@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel - Online Library</title>
+  <link rel="stylesheet" href="Css/Adminstyle.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="main-header">
+
+      <div class="main-header">
+        <div class="logo">
+            <img src="photos/freebook.webp" alt="" class="logoimg">
+        </div>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="freeBooks.html">Books</a>
+            <a href="about.html">About</a>
+         </div>
+    </div>
+    </div>
+  </header>
+
+  
+  <main class="admin-details-container">
+    <div class="admin-profile">
+      <img src="photos/adminpic.png" alt="Admin Profile" />
+      <div class="admin-info">
+        <h1 id = "adminName">Admin Name</h1>
+  <p class="role">Library Administrator</p>
+  <p class="admin-contact">Email: <span id="adminEmail">admin@example.com</span></p>
+  <p class="admin-contact">Phone: </p>
+  <p class="admin-contact">ID: A00123</p>
+        <div class="admin-actions">
+          <a href="#profile" class="profile-btn">👤 Profile</a>
+          <a href="#" class="logout-btn" id="logoutBtn">🔐 Logout</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-panel">
+      <h2>Admin Control Panel</h2>
+      <p>Manage your library, add new books, update records, and control availability from here.</p>
+      <div class="panel-buttons">
+        <a href="AddBooks.html"  class="btn">➕ Add New Book</a>
+        <a href="ManageBooks.html" class="btn">📚 Manage Existing Books</a>
+      </div>
+    </div>
+  </main>
+  <script src="java/admin.js" defer></script>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="photos/freebook.webp" alt="FreeBook Logo">
+            <p>Your Gateway to Knowledge</p>
+        </div>
+        <div class="footer-info">
+            <p>&copy; 2023 FreeBook Library System</p>
+            <p>CS214 - Database Project</p>
+            <p>Cairo University</p>
+        </div>
+        <div class="footer-contact">
+            <p><i class='bx bx-envelope'></i> contact@freebook.edu</p>
+            <p><i class='bx bx-phone'></i> +123 456 7890</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

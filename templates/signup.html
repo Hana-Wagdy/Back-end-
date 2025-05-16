@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>signup - Online Library</title>
+        <!-- css sheet link-->
+        <link rel="stylesheet" href="{% static 'Css/signup.css'%}"> 
+        <!-- cox icon link-->
+        <link rel="stylesheet"
+        href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <!-- the JS link -->
+         <script src="{% static 'java/signup.js'%}" defer></script> 
+    </head>
+<body>
+    <header class ="header" style="background-image: url('{% static 'photos/fav boo.jpeg' %}');" >
+        <div class="main-header">
+            <div class="logo">
+                <img src="{% static 'photos/freebook.webp' %}" alt="" class="logoimg">
+            </div>
+            <div class="navbar">
+                <a href="{% url 'pages:index' %}">Home</a>
+                <a href="{% url 'books:freebooks' %}">Books</a>
+                <a href="{% url 'pages:about' %}">About</a>
+                <a href="{% url 'auth:login' %}" class="btn">Login</a>
+            </div>
+        </div>
+    </div>
+    </header>
+    <!-- the sign up form -->
+    <div class="singup_container">
+        <h2>Create your Account</h2>
+        <form method="post" action="{% url 'auth:signup' %}">
+            {% csrf_token %}
+            <div class="form-fields">
+                <label>User Name</label>
+                <input type="text" placeholder="User Name" required>
+            </div>
+            <div class="form-fields">
+                <label>Email</label>
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="form-fields">
+                <label>password </label>
+                <input type="password" placeholder="Enter a strong password" required>
+            </div>
+            <div class="form-fields">
+                <label>Confirm password</label>
+                <input type="password" placeholder="Confirm password" required>
+            </div>
+            <div class="radio">
+                <input type="radio" value="User" name="rule" checked id="user" class="checkbox">
+                <i class='bx bx-user'></i> Regular User  
+            </div>
+            <div class="radio">
+                <input type="radio" value="admin" name="rule" id="admin" class="checkbox">
+                <i class='bx bx-shield-alt'></i> Admin
+            </div>
+            <input type="submit" value="Sign Up" class="submit">
+        </form>        
+        <div class="login">
+            Already have an account? <a href="{% url 'auth:login' %}"> Login now</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP - Online Library</title>
+    <link rel="stylesheet" href="{% static 'Css/verify-otp.css'%}">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <script src="{% static 'java/verify-otp.js'%}"></script>
+</head>
+<body>
+    
+    <header class="header" style="background-image: url('{% static 'photos/fav boo.jpeg' %}');">
+
+        <div class="main-header">
+            <div class="logo">
+                <img src="{% static 'photos/freebook.webp' %}" alt="Library Logo" class="logo-img">
+            </div>
+
+            <nav class="navbar">
+
+
+                <a href="{% url 'pages:index' %}">Home</a>
+                <a href="{% url 'books:freebooks' %}">Books</a>
+                <a href="{% url 'pages:about' %}">About</a>
+                <a href="{% url 'auth:signup' %}" class="btn">Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+
+
+    <div class="login_container">
+
+        <h2>Verify OTP</h2>
+        <p>We've sent a 6-digit code to your email. Please enter it below.</p>
+        
+        <form id="verifyOtpForm">
+            <div class="login-fields">
+
+                <label for="otp">OTP Code</label>
+
+                <input type="text" id="otp" name="otp" placeholder="Enter 6-digit OTP" required maxlength="6">
+            </div>
+            
+            <input type="submit" class="submit-btn" value="Verify OTP">
+            
+            <div class="signup-link">
+                Not a member? <a href="signup.html">Sign Up</a><br>
+                Already have an account? <a href="login.html">Login</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

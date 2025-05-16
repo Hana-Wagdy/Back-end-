@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Books - Online Library</title>
+  <link rel="stylesheet" href="{% static 'Css/ManagBooks.css'%}" />
+  <!-- Add Font Awesome for the three dots icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+  <header class="header" style="background-image: url('{% static 'photos/fav boo.jpeg' %}');">
+    <div class="main-header">
+      <div class="logo">
+        <img src="{% static 'photos/freebook.webp'%}" alt="" class="logoimg" />
+      </div>
+      
+      <div class="navbar">
+        <a href="{% url 'pages:index'%}">Home</a>
+        <a href="{% url 'pages:about'%}">About</a>
+        <a href="{% url 'users:adminprofile'%}">Admin Page</a>
+      </div>
+
+      <div class="search-container">
+        <form action="#" method="get" class="search-form">
+            <div class="search-input-group">
+                <input type="text" name="search" placeholder="Search by title, author, or category..." class="search-input">
+                <button type="submit" class="search-btn">
+                    <i class='bx bx-search'></i>
+                </button>
+            </div>
+            <div class="search-filters">
+                <label><input type="radio" name="search-type" value="title" checked> Title</label>
+                <label><input type="radio" name="search-type" value="author"> Author</label>
+                <label><input type="radio" name="search-type" value="category"> Category</label>
+            </div>
+        </form>
+      </div>
+    </div>
+    <div class="books" id="books">
+      <div class="main-topics">
+        <h1>Welcome, <span class="admin-name">Admin</span> 📚</h1>
+        <p>You can edit the Details of any Book or delete Books if needed </p>
+      </div>
+      
+      <div class="book-content" id="bookList"></div>
+      <script src="{% static 'java/ManageBooks.js'%}"></script>
+    </div>
+  </header>
+  
+  <footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="{% static 'photos/freebook.webp'%}" alt="FreeBook Logo">
+            <p>Your Gateway to Knowledge</p>
+        </div>
+        <div class="footer-info">
+            <p>&copy; 2023 FreeBook Library System</p>
+            <p>CS214 - Database Project</p>
+            <p>Cairo University</p>
+        </div>
+        <div class="footer-contact">
+            <p><i class='bx bx-envelope'></i> contact@freebook.edu</p>
+            <p><i class='bx bx-phone'></i> +123 456 7890</p>
+        </div>
+    </div>
+  </footer>
+</body>
+</html>
