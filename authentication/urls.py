@@ -10,6 +10,4 @@ urlpatterns = [
     path('forgetpassword' , views.forgetpassword , name='forgetpassword'),
     path('resetpassword' , views.resetpassword , name='resetpassword'),
 ]
- 
 
-# b7bko kolokooooooooooooooooooooooooooooooooooooo
