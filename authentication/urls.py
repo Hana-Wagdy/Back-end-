@@ -12,3 +12,4 @@ urlpatterns = [
 ]
  
 
+# b7bko kolokooooooooooooooooooooooooooooooooooooo
