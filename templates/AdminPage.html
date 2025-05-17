@@ -1,41 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin Panel - Online Library</title>
-  <link rel="stylesheet" href="Css/Adminstyle.css" />
+  <link rel="stylesheet" href="{% static 'Css/Adminstyle.css' %}" />
 </head>
 <body>
-  <header class="header">
+  <header class="header" style="background-image: url('{% static 'photos/fav boo.jpeg' %}');">
     <div class="main-header">
-
-      <div class="main-header">
-        <div class="logo">
-            <img src="photos/freebook.webp" alt="" class="logoimg">
-        </div>
-        <div class="navbar">
-            <a href="{% url 'pages:index' %}">Home</a>
-            <a href="{% url 'books:freebooks' %}">Books</a>
-            <a href="{% url 'pages:about' %}">About</a>
-         </div>
-    </div>
+      <div class="logo">
+        <img src="{% static 'photos/freebook.webp' %}" alt="" class="logoimg">
+      </div>
+      <div class="navbar">
+        <a href="{% url 'pages:index' %}">Home</a>
+        <a href="{% url 'books:freebooks' %}">Books</a>
+        <a href="{% url 'pages:about' %}">About</a>
+      </div>
     </div>
   </header>
 
-  
   <main class="admin-details-container">
     <div class="admin-profile">
-      <img src="photos/adminpic.png" alt="Admin Profile" />
+      <img src="{% static 'photos/adminpic.png' %}" alt="Admin Profile" />
       <div class="admin-info">
-        <h1 id = "adminName">Admin Name</h1>
-  <p class="role">Library Administrator</p>
-  <p class="admin-contact">Email: <span id="adminEmail">admin@example.com</span></p>
-  <p class="admin-contact">Phone: </p>
-  <p class="admin-contact">ID: A00123</p>
+        <h1 id="adminName">{{ request.user.username }}</h1>
+        <p class="role">Library Administrator</p>
+        <p class="admin-contact">Email: <span id="adminEmail">{{ request.user.email }}</span></p>
         <div class="admin-actions">
           <a href="#profile" class="profile-btn">👤 Profile</a>
-          <a href="#" class="logout-btn" id="logoutBtn">🔐 Logout</a>
+          <a href="{% url 'auth:login' %}" class="logout-btn" id="logoutBtn">🔐 Logout</a>
         </div>
       </div>
     </div>
@@ -44,14 +39,11 @@
       <h2>Admin Control Panel</h2>
       <p>Manage your library, add new books, update records, and control availability from here.</p>
       <div class="panel-buttons">
-        <a href="{% url 'manage:add' %}"  class="btn">➕ Add New Book</a>
-        <a href="{% url 'manage:manage' %}" class="btn">📚 Manage Existing Books</a>
+        <a href="{% url 'book_management:add' %}"  class="btn">➕ Add New Book</a>
+        <a href="{% url 'book_management:manage' %}" class="btn">📚 Manage Existing Books</a>
       </div>
     </div>
   </main>
-  <script src="java/admin.js" defer></script>
-
   {% include 'footer.html' %}
-
 </body>
 </html>

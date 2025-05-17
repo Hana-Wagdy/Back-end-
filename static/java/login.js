@@ -22,9 +22,15 @@
 //         localStorage.setItem("currentUser", JSON.stringify(user));
 
 //         if (user.role === "admin") {
+<<<<<<< HEAD
 //             window.location.href = "AdminPage.html";
 //         } else {
 //             window.location.href = "userprofile.html";
+=======
+//             window.location.href = "/users/adminprofile";
+//         } else {
+//             window.location.href = "/users/userprofile";
+>>>>>>> 1842ccfc7c492860779479f2fff6999835207543
 //         }
 //     });
 // });
