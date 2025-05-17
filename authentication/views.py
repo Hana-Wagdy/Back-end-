@@ -1,20 +1,44 @@
-from django.contrib.auth.models import User
-from django.contrib import messages
+from django.contrib.auth import authenticate, login as auth_login
 from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import CustomUser
 
-# Create your views here.
 def login(request):
     return render(request, 'login.html')
 
 def signup(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        email = request.POST['email']
-        password = request.POST['password']
-        # Add validation as needed
-        User.objects.create_user(username=username, email=email, password=password)
-        messages.success(request, 'Account created! Please log in.')
-        return redirect('auth:login')
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        confirm_password = request.POST.get('confirm_password')
+        role = request.POST.get('rule', 'user')  # Matches 'rule' from signup.html
+
+        # Validation
+        if password != confirm_password:
+            messages.error(request, "Passwords don't match!")
+            return redirect('auth:signup')
+        
+        if len(password) < 6:
+            messages.error(request, "Password must be at least 6 characters")
+            return redirect('auth:signup')
+
+        try:
+            # Create user
+            user = CustomUser.objects.create_user(
+                username=username,
+                email=email,
+                password=password,
+                role=role
+            )
+            
+            messages.success(request, 'Account created successfully! Please login.')
+            return redirect('auth:login')
+            
+        except Exception as e:
+            messages.error(request, f"Error creating account: {str(e)}")
+            return redirect('auth:signup')
+    
     return render(request, 'signup.html')
 
 def verifyotp(request):
