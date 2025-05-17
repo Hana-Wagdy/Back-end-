@@ -41,16 +41,21 @@
     <!-- Search End -->
   </div>
   <!-- Book display section -->
-  <div class="books" id="books">
-    <div class="main-topics">
-      <h1>Free Books</h1>
-      <p>Explore our vast collection of free books. Discover new authors, dive into different genres, and enjoy unlimited reading without any cost.</p>
-    </div>
-
-      <div id="bookList" class="book-list"></div>
-      <script src="{% static 'java/freebooks.js' %}"></script>
-    </div>
-  </div>
+  <div class="book-content" id="bookList">
+    {% for book in books %}
+        <div class="col-5" data-id="{{ book.id }}">
+            <a href="{% url 'books:bookdetails' book_id=book.id %}">
+                <div class="image">
+                    <img src="{% if book.cover %}{{ book.cover.url }}{% else %}{% static 'photos/default-cover.jpg' %}{% endif %}" alt="{{ book.title }}">
+                </div>
+                <p class="book_name">{{ book.title }}</p>
+            </a>
+        </div>
+    {% empty %}
+        <p>No books found.</p>
+    {% endfor %}
+</div>
+<script src="{% static 'js/freebooks.js' %}"></script>
 </header>
 
 {% include 'footer.html' %}
