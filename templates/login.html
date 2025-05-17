@@ -20,9 +20,9 @@
                 <img src="{% static 'photos/freebook.webp'%}" alt="Library Logo" class="logo-img">
             </div>
             <nav class="navbar">
-                <a href="index.html">Home</a>
-                <a href="freeBooks.html">Books</a>
-                <a href="about.html">About</a>
+                <a href="{% url 'pages:index' %}">Home</a>
+                <a href="{% url 'books:freebooks' %}">Books</a>
+                <a href="{% url 'pages:about' %}">About</a>
                 <a href="signup.html" class="btn">Sign Up</a>
             </nav>
         </div>

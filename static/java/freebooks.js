@@ -10,14 +10,13 @@ function displayBooks(books, containerSelector = ".book-content", showActions = 
     }
   
     books.forEach(book => {
-        const coverPath = book.cover?.startsWith('photos/') ? book.cover : `photos/${book.cover || 'default-cover.jpg'}`;
+        const coverPath = book.cover || '{% static "photos/default-cover.jpg" %}';
         const bookId = book.id;
         const bookTitle = book.title || 'Untitled Book';
         
         container.innerHTML += `
         <div class="col-5" data-id="${bookId}">
-            
-            <a href="bookdetailed.html?id=${bookId}">
+            <a href="{% url 'books:bookdetails' book_id=bookId %}">
                 <div class="image">
                     <img src="${coverPath}" alt="${bookTitle}">
                 </div>
@@ -25,9 +24,8 @@ function displayBooks(books, containerSelector = ".book-content", showActions = 
             </a>
         </div>`;
     });
-
-
 }
+
 
 function filterBooks() {
     const inputElement = document.querySelector(".search-input");

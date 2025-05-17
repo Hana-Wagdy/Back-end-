@@ -31,34 +31,34 @@
     <!-- the sign up form -->
     <div class="singup_container">
         <h2>Create your Account</h2>
-        <form method="post" action="{% url 'auth:signup' %}">
+        <form method="post" action="{% url 'auth:signup' %}" id="signupForm">
             {% csrf_token %}
             <div class="form-fields">
                 <label>User Name</label>
-                <input type="text" placeholder="User Name" required>
+                <input type="text" name="username" placeholder="User Name" required>
             </div>
             <div class="form-fields">
                 <label>Email</label>
-                <input type="email" placeholder="Email" required>
+                <input type="email" name="email" placeholder="Email" required>
             </div>
             <div class="form-fields">
-                <label>password </label>
-                <input type="password" placeholder="Enter a strong password" required>
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter a strong password" required>
             </div>
             <div class="form-fields">
                 <label>Confirm password</label>
-                <input type="password" placeholder="Confirm password" required>
+                <input type="password" name="confirm_password" placeholder="Confirm password" required>
             </div>
             <div class="radio">
-                <input type="radio" value="User" name="rule" checked id="user" class="checkbox">
-                <i class='bx bx-user'></i> Regular User  
+                <input type="radio" value="user" name="rule" checked id="user" class="checkbox">
+                <label for="user"><i class='bx bx-user'></i> Regular User</label>
             </div>
             <div class="radio">
                 <input type="radio" value="admin" name="rule" id="admin" class="checkbox">
-                <i class='bx bx-shield-alt'></i> Admin
+                <label for="admin"><i class='bx bx-shield-alt'></i> Admin</label>
             </div>
             <input type="submit" value="Sign Up" class="submit">
-        </form>        
+        </form>       
         <div class="login">
             Already have an account? <a href="{% url 'auth:login' %}"> Login now</a>
         </div>

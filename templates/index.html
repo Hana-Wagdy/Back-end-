@@ -20,15 +20,7 @@
             <div class="logo">
                 <img src="{% static 'photos/freebook.webp' %}" alt="" class="logoimg">
             </div>
-            <div class="navbar">
-                <a href="{% url 'pages:index' %}">Home</a>
-                <a href="{% url 'books:freebooks' %}">Books</a>
-                <a href="#" id="profile-link">Profile</a>         
-                <!-- aftkroooooooo el profile linkkkkkkkkkkkkkkk -->
-                <a href="{% url 'pages:about' %}">About</a>
-                <a href="{% url 'auth:login' %}" id="login-btn" class="btn">Login</a>
-                <a href="{% url 'auth:signup' %}" class="btn">Sign Up</a>
-            </div>
+            {% include 'header.html' %}
         </div>
         <div class="home" id="home">
             <div class="home-content">
@@ -99,23 +91,8 @@
 </section>
 
 
-    <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="{% static 'photos/freebook.webp' %}" alt="FreeBook Logo">
-                <p>Your Gateway to Knowledge</p>
-            </div>
-            <div class="footer-info">
-                <p>&copy; 2023 FreeBook Library System</p>
-                <p>CS214 - Database Project</p>
-                <p>Cairo University</p>
-            </div>
-            <div class="footer-contact">
-                <p><i class='bx bx-envelope'></i> contact@freebook.edu</p>
-                <p><i class='bx bx-phone'></i> +123 456 7890</p>
-            </div>
-        </div>
-    </footer>
+{% include 'footer.html' %}
+
     <script src="{% static 'java/index.js'%}"></script>
       
       

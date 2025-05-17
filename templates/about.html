@@ -18,8 +18,8 @@
                 <img src="{% static 'photos/freebook.webp' %}" alt="FreeBook Logo" class="logo-img">
             </div>
             <div class="navbar">
-                <a href="index.html">Home</a>
-                <a href="freeBooks.html">Books</a>
+                <a href="{% url 'pages:index' %}">Home</a>
+                <a href="{% url 'books:freebooks' %}">Books</a>
                 <a href="#" id="profile-link">Profile</a>                
             </div>
         </div>
@@ -128,23 +128,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="{% static 'photos/freebook.webp' %}" alt="FreeBook Logo">
-                <p>Your Gateway to Knowledge</p>
-            </div>
-            <div class="footer-info">
-                <p>&copy; 2023 FreeBook Library System</p>
-                <p>CS214 - Database Project</p>
-                <p>Cairo University</p>
-            </div>
-            <div class="footer-contact">
-                <p><i class='bx bx-envelope'></i> contact@freebook.edu</p>
-                <p><i class='bx bx-phone'></i> +123 456 7890</p>
-            </div>
-        </div>
-    </footer>
+    {% include 'footer.html' %}
 
     <script src="{% static 'java/index.js' %}"></script>
 
