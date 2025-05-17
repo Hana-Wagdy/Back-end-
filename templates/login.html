@@ -31,7 +31,8 @@
     <div class="login_container">
         <h2>Member Login</h2>
         
-        <form action="index.html" method="get">
+        <form action="{% url 'auth:login' %}" method="post">
+            {% csrf_token %}
             <div class="login-fields">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Enter your username" required>

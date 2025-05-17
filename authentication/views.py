@@ -4,6 +4,19 @@ from django.contrib import messages
 from .models import CustomUser
 
 def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            auth_login(request, user)
+            if user.role == 'admin':
+                return redirect('users:adminprofile') 
+            else:
+                return redirect('users:usersprofile')  
+        else:
+            messages.error(request, "Invalid username or password.")
+            return redirect('auth:login')
     return render(request, 'login.html')
 
 def signup(request):
