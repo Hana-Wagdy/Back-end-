@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login as auth_login
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import CustomUser
-
+#commented out for now
 def login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
